@@ -1,0 +1,94 @@
+:root {
+    --primary: #c20000;
+}
+.navBarStaff{
+    margin-left: .5rem;
+}
+#navbarScrollingDropdown, #navbarSinScroll {
+    color: white;
+    align-content: flex-start;
+}
+
+.dropdown-menu.show {
+    background: #212529;
+}
+
+.dropdown-item {
+    color: white !important;
+}
+
+.dropdown-item:hover {
+    background: red !important;
+}
+
+.navbar-light .navbar-toggler {
+    background-color: white;
+}
+
+.navbar-toggler.collapsed {
+    color: white;
+}
+
+.element.style {
+    height: 100vh;
+}
+
+#navbarScrollingDropdown:hover, #navbarSinScroll:hover {
+    background-color: var(--primary);
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+}
+
+.mod {
+    margin-left: -15px;
+}
+
+.dominicana {
+    font-size: 15px;
+}
+
+.setBanderas{
+    padding-right: 10px;
+    width: 25%;
+    height: 30%;
+}
+
+.staffEdit {
+    padding-left: 7px;
+}
+
+.setlogo {
+    width: 80%;
+}
+
+
+@media (min-width: 300px) and (max-width: 1000px ){
+    .setBanderas {
+      width: 5%;
+    }
+  }
+
+  @media (min-width: 300px) and (max-width: 500px ){
+    .setBanderas {
+      width: 15%;
+    }
+  }
+
+  body.swal2-shown > [aria-hidden="true"] {
+    transition: 0.1s filter;
+    filter: blur(10px);
+  }
+
+  .contenedorLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .botonLoguearse {
+      width: 100%;
+  }
+
+  .barritaForm{
+      margin: 10px;
+  }

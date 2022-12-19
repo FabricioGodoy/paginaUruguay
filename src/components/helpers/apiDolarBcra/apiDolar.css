@@ -1,0 +1,54 @@
+/* .dolarContainer{
+    position: relative;
+    display:flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+    padding: 2rem;
+}
+ */
+
+ .dolarContainer {
+    width: 85%;
+    height: 6vh;
+    display: flex;
+    overflow: hidden;
+    padding: 1rem;
+    justify-content: space-evenly;
+    margin: auto;
+ }
+
+ .dolar{
+    display: flex;
+    animation: scroll 30s linear infinite;
+    -webkit-animation: scroll 30s linear infinite;
+    width: calc(200px*14);
+    margin: auto;
+    padding: 0rem 3rem 0rem 10rem;
+ }
+
+ .dolar h5{
+    width: 10vw;
+ }
+ .dolar span{
+    width: 8rem;
+ }
+ .dolarTitulo{
+    color: red;
+ }
+ .dolarVenta{
+    color: green;
+ }
+ .dolarCompra{
+    color: blue;
+ }
+
+ @keyframes scroll {
+    0%{
+        -webkit-transform: translateX(200px * 7);
+        transform: translateX(200px * 7);
+    }
+    100%{
+        -webkit-transform: translateX(calc(-200px * 7));
+        transform: translateX(calc(-200px * 7));
+    }
+ }

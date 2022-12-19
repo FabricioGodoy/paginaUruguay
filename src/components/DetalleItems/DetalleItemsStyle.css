@@ -1,0 +1,33 @@
+.contenedorDetalle{
+    background-color: rgba(225, 225, 225, 0.695);
+    box-shadow: 10px 12px 15px -6px rgba(0,0,0,0.46);
+    -webkit-box-shadow: 10px 12px 15px -6px rgba(0,0,0,0.46);
+    -moz-box-shadow: 10px 12px 15px -6px rgba(0,0,0,0.46);
+}
+
+.contenedorImagenDetalle {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorDetalle img {
+    min-width: 45%;
+    max-width: 50%;
+}
+
+.contenedorDetalle p {
+    margin: 10px;
+    padding-left: 10px;
+}
+
+.botonComprar {
+    margin: 10px;
+    padding-left: 10px;
+}
+
+.inputCantidad{
+    width: 60px;
+    margin: 10px;
+    padding-left: 10px;
+}

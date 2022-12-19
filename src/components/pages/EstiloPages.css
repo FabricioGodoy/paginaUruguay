@@ -1,0 +1,103 @@
+.contenEmpresa{
+    width: 60%;
+    margin: 1rem auto;
+    padding: 2rem;
+    transition: all 0.3s;
+}
+.contenEmpresa p{
+    line-height: 1.5;
+}
+
+.centrarDiv {
+    height: 300px;
+}
+
+.formP {
+    margin-bottom: 0;
+    color: white;
+    font-weight: bold;
+}
+
+/* RMA SELECTOR */
+
+.containerRmaButtons {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 800px) {
+    .containerRmaButtons {
+        padding-top: 60px;
+        
+    }
+    .contAlt{
+        height: 200px;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .containerRmaButtons {
+        flex-wrap: wrap;
+    }
+
+}
+
+.butn2 {
+    width: 80%;
+    height: 60%;
+    margin: 20px 0;
+    background: #333;
+    border-radius: 20px;
+    font-size: 20px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.butn2:hover {
+    background: rgba(51, 51, 51, 0.564);
+    font-size: 20px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: white;
+}
+
+
+/* RMA MARCAS */
+
+.containerRmaBrands {
+    display: flex;
+    justify-content: center;
+}
+
+.containerRmaBrandsHeight {
+    height: 300px;
+}
+
+/* BOTON RMA FALLA */
+
+.butn3{
+    margin: 20px 0;
+    padding: 1%;
+    border-radius: 30px;
+    background: #333;
+    font-size: 20px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.butn3:hover {
+    background: rgba(51, 51, 51, 0.564);
+    font-size: 20px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: white;
+}

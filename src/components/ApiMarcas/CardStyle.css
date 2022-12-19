@@ -1,0 +1,88 @@
+.card {
+    background-color: rgb(241, 241, 241);
+}
+
+.editC {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.editC p {
+    background-color: rgb(241, 241, 241);
+}
+
+.absolute {
+    position: relative;
+}
+
+.imgProd{
+    width: 100%;
+    max-height: 60%;
+}
+
+.logosb {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.spanStock {
+    background-color: rgb(241, 241, 241);
+    color: rgb(202, 132, 3);
+}
+
+.Descripcion {
+    color: gray;
+    margin-top: -20px;
+    font-size: 12px;
+}
+
+.botonInfo {
+    background-color: #dc3545 !important;
+    border: 1px solid #dc3545 !important;;
+    border-radius: 10px!important;
+}
+
+.botonInfo:hover {
+    background-color: #b82937 !important;
+    color: rgb(53, 52, 52) !important;
+    transition: all 1s;
+}
+
+.botonLogin {
+    background-color: #000000 !important;
+    border: 1px solid #000000 !important;;
+    border-radius: 10px!important;
+    margin-left: 60px;
+}
+
+.botonCompra {
+    background-color: #000000 !important;
+    border: 1px solid #000000 !important;;
+    border-radius: 10px!important;
+    margin-left: 30px;
+}
+.flexContainer {
+    box-shadow: 15px 17px 13px -11px rgba(0,0,0,0.9);
+-webkit-box-shadow: 15px 17px 13px -11px rgba(0,0,0,0.9);
+-moz-box-shadow: 15px 17px 13px -11px rgba(0,0,0,0.9);
+}
+
+.spanIva {
+    background-color: white;
+    color: gray;
+    font-size: 10px;
+} 
+
+.imgProd {
+    max-height: 60%;
+}
+
+.contenedorCard {
+    position: relative;
+    bottom: 0px;
+}

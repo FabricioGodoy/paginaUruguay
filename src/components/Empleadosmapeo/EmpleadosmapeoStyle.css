@@ -1,0 +1,49 @@
+.row {
+    justify-content: center;
+}
+
+#cuerpo {
+    background-color: rgba(61, 61, 61, 0.438);
+    border-radius: 3%;
+    padding: 5px;
+    box-shadow: 8px 8px 2px 1px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+}
+
+.personaNombre {
+    color: white;
+    font-weight: 300;
+}
+
+#cuerpo:hover {
+    background-color: rgba(61, 61, 61, 0.411);
+    width: 18rem;
+    border-radius: 3%;
+    padding: 5px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+
+    transform: translate(0,-10px);
+    transition: 0.5s all;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.personaCargo {
+    background-color: black;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.imagenPersona {
+    border-radius: 50%;
+}
+
+.personaCorreo {
+    font-weight: 500;
+    font-size: 0.7em;
+}
