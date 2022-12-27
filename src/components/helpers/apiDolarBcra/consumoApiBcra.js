@@ -1,33 +1,27 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* import Axios from "axios"; */
+import Axios from "axios";
 import { useState, useEffect } from "react";
 import "./apiDolar.css";
 
 export const ConsumoApiBcra = () => {
-  const URL = "https://api.estadisticasbcra.com/usd";
+  const URL = "https://api.estadisticasbcra.com/usd_of";
   const [dolarBlueVenta, setDolarBlueVenta] = useState([]);
 
   useEffect(() => {
-    fetch(URL, {
+    Axios.get(URL, {
       headers: {
         Authorization:
           "BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDM1OTQ4MDQsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJmYWJyaWNpb2dvZG95OTVAaG90bWFpbC5jb20ifQ.YNtl-7bha0o78jWHHm9A2998c0puVyhUHGLcdcEnYeWr3lT3-U1zstEoVWjgejkFnxuIx9xkgXt3Z2U6LK9cgw"
       }
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        setDolarBlueVenta(() => {
-          return (
-            "al dia de " + data[data.length - 1].v + " su valor es de " + data.v
-          );
-        });
-
-        console.log(data);
-        console.log(dolarBlueVenta);
-        console.log(data[data.length - 1].v);
-      });
+    }).then((res) => {
+      console.log(res)
+      console.log(res.data[res.data.length-1].v)
+      setDolarBlueVenta(
+         "al dia de " + res.data[res.data.length-1].d + " su valor es de " + res.data[res.data.length-1].v
+      );
+    });
+   
   }, [dolarBlueVenta]);
-
   return (
     <>
       <div className="dolarContainer">
@@ -59,14 +53,18 @@ export const ConsumoApiBcra = () => {
 //   const [dolarOficialCompra, setDolarOficialCompra] = useState([]);
 //   const [dolarOficialVenta, setDolarOficialVenta] = useState([]);
 
-//   useEffect(() => {
-//     /* llamado dolar blue venta */
-//     Axios.get(URL).then((res) => {
-//       setDolarBlueVenta(
-//         /* res.data[1].casa.nombre + */
-//         " venta $" + res.data[1].casa.venta
-//       );
-//     });
+  // useEffect(() => {
+  //   /* llamado dolar blue venta */
+  //   Axios.get(URL, {
+  //     headers: {
+  //       Authorization:
+  //         "BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDM1OTQ4MDQsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJmYWJyaWNpb2dvZG95OTVAaG90bWFpbC5jb20ifQ.YNtl-7bha0o78jWHHm9A2998c0puVyhUHGLcdcEnYeWr3lT3-U1zstEoVWjgejkFnxuIx9xkgXt3Z2U6LK9cgw"
+  //     }
+  //   }).then((res) => {
+  //     setDolarBlueVenta(
+  //        "al dia de " + data[data.length - 1].v + " su valor es de " + data.v
+  //     );
+  //   });
 
 //     /* llamado dolar blue compra */
 //     Axios.get(URL).then((res) => {
