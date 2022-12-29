@@ -1,82 +1,163 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import "./apiDolar.css";
 
-export const ConsumoApiDolarSi = () => {
-  const URL = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
-  const [dolarBlueVenta, setDolarBlueVenta] = useState([]);
-  const [dolarBlueCompra, setDolarBlueCompra] = useState([]);
-  const [dolarOficialCompra, setDolarOficialCompra] = useState([]);
-  const [dolarOficialVenta, setDolarOficialVenta] = useState([]);
+export const ConsumoApiBcra = () => {
+  const URLdolarBlue = "https://api.estadisticasbcra.com/usd";
+  const URLdolarOficial = "https://api.estadisticasbcra.com/usd_of";
+  const [dolarBlue, setDolarBlue] = useState([]);
+  const [dolarOficial, setDolarOficial] = useState([]);
 
-useEffect(() => {
-  /* llamado dolar blue venta */
-   Axios.get(URL).then((res) => {
-    setDolarBlueVenta(
-        " venta $" + res.data[1].casa.venta
-      );
-    });
+  useEffect(() => {
+    Axios.get(URLdolarBlue, {
+      headers: {
+        Authorization:
+          "BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDM1OTQ4MDQsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJmYWJyaWNpb2dvZG95OTVAaG90bWFpbC5jb20ifQ.YNtl-7bha0o78jWHHm9A2998c0puVyhUHGLcdcEnYeWr3lT3-U1zstEoVWjgejkFnxuIx9xkgXt3Z2U6LK9cgw"
+      }
+    })
+      /*  .then( (data) => data.text()) */
+      .then((res) => {
+        console.log(res);
+        console.log(res.data[res.data.length - 1].v);
+        setDolarBlue(
+          /*   " al dia " +
+            res.data[res.data.length - 1].d[8] +
+            res.data[res.data.length - 1].d[9] +
+            " del mes " +
+            res.data[res.data.length - 1].d[5] +
+            res.data[res.data.length - 1].d[6] + */
+          " U$D " + res.data[res.data.length - 1].v
+        );
+      });
 
-    /* llamado dolar blue compra */
-    Axios.get(URL).then((res) => {
-      setDolarBlueCompra(
-        /*     res.data[1].casa.nombre + */
-        " compra $" + res.data[1].casa.compra
-      );
-    });
-
-    /* llamado dolar oficial compra*/
-    Axios.get(URL).then((res) => {
-      setDolarOficialCompra(
-        /*  res.data[0].casa.nombre + */
-        " compra $" + res.data[0].casa.compra
-      );
-    });
-    /* llamado dolar oficial venta*/
-    Axios.get(URL).then((res) => {
-      setDolarOficialVenta(
-       /*   res.data[0].casa.nombre + */
-        " venta $" + res.data[0].casa.venta
-      );
-    });
-  }, [dolarBlueVenta, dolarOficialCompra, dolarBlueCompra, dolarOficialVenta]);
-
-  console.log(
-    dolarBlueVenta,
-    dolarOficialCompra,
-    dolarBlueCompra,
-    dolarOficialVenta
-  );
+    Axios.get(URLdolarOficial, {
+      headers: {
+        Authorization:
+          "BEARER eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDM1OTQ4MDQsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJmYWJyaWNpb2dvZG95OTVAaG90bWFpbC5jb20ifQ.YNtl-7bha0o78jWHHm9A2998c0puVyhUHGLcdcEnYeWr3lT3-U1zstEoVWjgejkFnxuIx9xkgXt3Z2U6LK9cgw"
+      }
+    })
+      /*  .then( (data) => data.text()) */
+      .then((res) => {
+        /*       console.log(res);
+      console.log(res.data[res.data.length - 1].v); */
+        setDolarOficial(
+          /*   " al dia " +
+          res.data[res.data.length - 1].d[8] +
+          res.data[res.data.length - 1].d[9] +
+          " del mes " +
+          res.data[res.data.length - 1].d[5] +
+          res.data[res.data.length - 1].d[6] + */
+          " U$D " + res.data[res.data.length - 1].v
+        );
+      });
+  }, [dolarOficial, dolarBlue]);
   return (
     <>
-
       <div className="dolarContainer">
-        <br />
-        {/* codigo original comienza aca */}
-        <div /* className="dolar" */>
-          <hr />
-          <h5 className="dolarTitulo">Dolar Blue: </h5>
-          <span className="dolarVenta">{dolarBlueVenta}</span>
-          <span className="dolarCompra">{dolarBlueCompra}</span>
-          <hr />
-          <hr />
+        <div className="dolar">
+          {/* primer llamado a render */}
+          <div className="dolarBlue">
+            Dolar Blue:
+            {dolarBlue}
+          </div>
+          <div className="dolarOficial">
+            Dolar Oficial:
+            {dolarOficial}
+          </div>
+          {/* fin primer llamado a render */}
+
+          {/* llamados par ano cortar el slider */}
+          <div className="dolarBlue">
+            Dolar Blue:
+            {dolarBlue}
+          </div>
+          <div className="dolarOficial">
+            Dolar Oficial:
+            {dolarOficial}
+          </div>
+
+          <div className="dolarBlue">
+            Dolar Blue:
+            {dolarBlue}
+          </div>
+          <div className="dolarOficial">
+            Dolar Oficial:
+            {dolarOficial}
+          </div>
+
+          <div className="dolarBlue">
+            Dolar Blue:
+            {dolarBlue}
+          </div>
+          <div className="dolarOficial">
+            Dolar Oficial:
+            {dolarOficial}
+          </div>
+
+          <div className="dolarBlue">
+            Dolar Blue:
+            {dolarBlue}
+          </div>
+          <div className="dolarOficial">
+            Dolar Oficial:
+            {dolarOficial}
+          </div>
+
+          <div className="dolarBlue">
+            Dolar Blue:
+            {dolarBlue}
+          </div>
+          <div className="dolarOficial">
+            Dolar Oficial:
+            {dolarOficial}
+          </div>
+          
+          <div className="dolarBlue">
+            Dolar Blue:
+            {dolarBlue}
+          </div>
+          <div className="dolarOficial">
+            Dolar Oficial:
+            {dolarOficial}
+          </div>
+          
+          <div className="dolarBlue">
+            Dolar Blue:
+            {dolarBlue}
+          </div>
+          <div className="dolarOficial">
+            Dolar Oficial:
+            {dolarOficial}
+          </div>
+          
+          <div className="dolarBlue">
+            Dolar Blue:
+            {dolarBlue}
+          </div>
+          <div className="dolarOficial">
+            Dolar Oficial:
+            {dolarOficial}
+          </div>
+          
+          <div className="dolarBlue">
+            Dolar Blue:
+            {dolarBlue}
+          </div>
+          <div className="dolarOficial">
+            Dolar Oficial:
+            {dolarOficial}
+          </div>
+          
+          <div className="dolarBlue">
+            Dolar Blue:
+            {dolarBlue}
+          </div>
+          <div className="dolarOficial">
+            Dolar Oficial:
+            {dolarOficial}
+          </div>
+          {/* fin llamados par ano cortar el slider */}
         </div>
-
-        <br />
-
-        <div /* className="dolar" */>
-          <hr />
-          <h5 className="dolarTitulo">Dolar Oficial: </h5>
-          <span className="dolarVenta">{dolarOficialVenta}</span>
-          <span className="dolarCompra">{dolarOficialCompra}</span>
-          <hr />
-          <hr />
-        </div>
-
-        {/* codigo original finaliza aca */}
-
-      
       </div>
     </>
   );
