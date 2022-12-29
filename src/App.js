@@ -18,6 +18,7 @@ import { EmpleadosListaPM } from './components/EmpleadosLista/EmpleadoListaPM'
 import { EmpleadosListaVentas} from './components/EmpleadosLista/EmpleadoListaVendedores'
 import { Home } from './components/Body/Home'
 import { ConsumoApiBcra} from './components/helpers/apiDolarBcra/consumoApiBcra'
+import { ConsumoApiDolarSi } from './components/helpers/apiDolarBcra/consupoApiDolarSi';
 
 function App() {
   return (
@@ -31,9 +32,9 @@ function App() {
               <Route path="/" element= {<Home/> }/>
               <Route path="/homeFramerMotion" element= {<HomeFramerMotion/> }/>
 
-{/* 
+
               <Route path="/apiBcra" element= {<ConsumoApiBcra/> }/>
- */}
+              <Route path="/apiDolarSI" element= {<ConsumoApiDolarSi/> }/>
 
               <Route path="/empleadosGerentes" element= { <EmpleadosLista/> }/>
               <Route path="/empleadosGerentes/:catId" element= { <EmpleadosLista/> }/>
